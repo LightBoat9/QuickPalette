@@ -5,5 +5,5 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuickPalette"
         mc:Ignorable="d"
-        Title="Quick Palette" Height="576" Width="576" Source="ColorDisplay.xaml" ResizeMode="CanMinimize">
+        Title="Quick Palette" Height="576" Width="576" Source="ColorDisplay.xaml" ResizeMode="CanMinimize" Icon="icon.ico">
 </NavigationWindow>

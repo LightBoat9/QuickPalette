@@ -28,6 +28,9 @@ namespace QuickPalette
         const int COLS = 8;
         const int MAX_COLORS = ROWS * COLS;
         const int BUTTON_SIZE = 64;
+        // Difference in color required for colors to be considered the same
+        // Set back to 0 since with pixel art it mostly is not needed
+        const float COLOR_DIFFERENCE = 0.00f;
 
         public ColorDisplay()
         {
@@ -226,8 +229,7 @@ namespace QuickPalette
                 float grayCol = 0.11f * col.B + 0.59f * col.G + 0.30f * col.R;
                 float grayCheck = 0.11f * checkColor.B + 0.59f * checkColor.G + 0.30f * checkColor.R;
                 float difference = Math.Abs(grayCol - grayCheck) * 100.0f / 255.0f;
-                // If the colors have less than a 1% difference then they are similar
-                if (difference < 0.01)
+                if (difference <= 0.001)
                 {
                     return true;
                 }
